@@ -242,13 +242,17 @@ class foo { protected: int a; }; class foobar : public foo { public: int bar(foo
 这次，在 foobar::bar 里，访问 this 的 a 成员允许，但 f 的 a 成员却被禁止了。
 
 因为 foo::a 对 foobar 是 protected 的，foobar 的成员函数可以访问自己的 a ，但是对于 foo 指针，就禁止了。
---------------
+
+-------
+
 我的想法:
     这里`bar`函数是`foobar`的成员函数,而不是foo的成员函数,因此不能使用`f->a`的方式获取其保护/私有成员
-------------
+
+-------
 想了一下，解决方案是。
 ```c++
 class foo { protected: int a; static int get_a(foo *self) { return self->a; } }; class foobar : public foo { public: int bar(foo * f) { return this->a + get_a(f); } };
 ```
 很坏味道。不过也不太所谓了。
 
+这里就是定义一个静态的成员函数来在`foo`的静态`成员函数`中取出这个值
