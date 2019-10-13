@@ -256,3 +256,19 @@ class foo { protected: int a; static int get_a(foo *self) { return self->a; } };
 很坏味道。不过也不太所谓了。
 
 这里就是定义一个静态的成员函数来在`foo`的静态`成员函数`中取出这个值
+
+### What’s the difference between the keywords struct and class?  struct和class之间有什么区别?
+
+结构体的成员和基类默认是`public`的,类中默认是私有的
+但是即使这样,在类中/继承时依然应该显式的声明出来,而非依靠隐式的默认值.
+The members and base classes of a struct are public by default, while in class, they default to private. Note: you should make your base classes explicitly public, private, or protected, rather than relying on the defaults.
+
+除此之外,两者在功能性上是等同的.
+struct and class are otherwise functionally equivalent.
+
+Enough of that squeaky clean techno talk. Emotionally, most developers make a strong distinction between a class and a struct. A struct simply feels like an open pile of bits with very little in the way of encapsulation or functionality. A class feels like a living and responsible member of society with intelligent services, a strong encapsulation barrier, and a well defined interface. Since that’s the connotation most people already have, you should probably use the struct keyword if you have a class that has very few methods and has public data (such things do exist in well designed systems!), but otherwise you should probably use the class keyword.
+
+### vector sort
+
+sort算法要求一个valid的区间,因此当`vector`为空时,`begin`==`end`,此时不能去调用`sort`函数/大多数其他的算法库
+大部分C++标准库算法要求`[...,...)`这种的有意义的区间
