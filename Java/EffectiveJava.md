@@ -111,3 +111,8 @@ public class StopThread {
     }
 }
 ```
+volatile不执行互斥访问,但是保证任何一个线程在读取该域的时候都能看到最近刚刚被写入的值.
+
+
+### 80 executor task和 stream优先于线程
+
