@@ -26,8 +26,13 @@ clean:
 ```
 
 ref:
+
 http://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/
+
 https://www.gnu.org/software/make/manual/html_node/Simple-Makefile.html
+
 https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_makefiles.html
+
 很实用的例子
+
 http://mrbook.org/blog/tutorials/make/
