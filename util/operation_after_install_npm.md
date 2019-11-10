@@ -16,7 +16,6 @@ npm info express
 ```
 
 ## 通过cnpm
-## 通过cnpm
 ```
 npm install -g cnpm --registry=https://registry.npm.taobao.org
 
