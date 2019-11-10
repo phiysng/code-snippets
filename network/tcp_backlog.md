@@ -47,3 +47,8 @@ real_backlog = min(backlog, SOMAXCONN)
 
 像NGINX/Tomcat这些Web服务器都可以设置backlog,当并发量很大额时候需要综合设置应用层和内核层的参数.
 ```
+
+see:
+listen实现:
+
+https://github.com/torvalds/linux/blob/26bc672134241a080a83b2ab9aa8abede8d30e1c/net/socket.c#L1667
