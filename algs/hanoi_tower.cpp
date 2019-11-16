@@ -29,8 +29,8 @@ void Hanoi(int n, char a, char b, char c)
         //move the last one in a  to c
         printf("move %c to %c\n", a, c);
         // at this moment we move the largest one in a to c and leave the rest to b
-        // since then the b is actually the new a logically.
-        // so we call hanoi recursively
+        // since then the b is actually the new a logically
+        // we call hanoi recursively
         // now a is used as the helper.
         Hanoi(n - 1, b, a, c);
     }
