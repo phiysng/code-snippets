@@ -45,7 +45,7 @@ int main(int argc, const char** argv)
 	- 两个调用都只能处理右值的情况 语句2没有合适的匹配
 
 
-```
+```c++
 void transfer_ownership(unique_ptr<string> ptr); // 1
 void transfer_ownership(unique_ptr<string>& ptr); // 2
 void transfer_ownership(unique_ptr<string>&& ptr); // 3
